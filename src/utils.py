@@ -14,7 +14,7 @@ def get_json(file_path):
     return data
 
 
-def sort_by_date_dictionary_list(list_name):
+def sort_by_date(list_name):
     # Обрабатываем список, исключая из него пустые словари без ключа 'date'
     new_list = [dictionary for dictionary in list_name if 'date' in dictionary]
 
@@ -24,7 +24,7 @@ def sort_by_date_dictionary_list(list_name):
     return sorted_new_list
 
 
-def get_latest_executed_transactions(list_name):
+def get_executed_transactions(list_name):
     """
     Принимает список всех операций, и возвращает список из пяти ВЫПОЛНЕННЫХ операций.
     :param list_name: Список словарей, содержащих информацию обо всех операциях.
@@ -38,6 +38,8 @@ def get_latest_executed_transactions(list_name):
 
         if len(latest_transactions) == 5:
             return latest_transactions
+
+    return latest_transactions
 
 
 def mask_information(data: str):
